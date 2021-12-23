@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrah2 cSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style1.css') }}" />
+    <title>Dashboard</title>
+    <link rel="icon" href="/static/images/Logo no tulisan.png" type="image/x-icon" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js"
+    ></script>
+    <script type="text/javascript">
+      Bokeh.set_log_level('info');
+    </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/" id="logo-navbar">
+          <img src="/static/images/Elevate Logo tulisan putih.png" width="150px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/tentangkami/">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard/">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Navbar-->
+
+    <!--Heading-->
+    <section id="heading" style="margin-top: 5rem">
+      <h1 id="judul">Dashboard</h1>
+    </section>
+    <!--End Heading-->
+    <!--Coin Selector-->
+    <section class="coin-selector">
+      <div class="container">
+        <div
+          id="carouselExampleDark"
+          class="carousel carousel-dark slide"
+          data-ride="carousel"
+          data-type="multi"
+          data-interval="false"
+        >
+          <div class="carousel-inner" data-bs-interval="None">
+            <div class="carousel-item active">
+              <div class="row row-cols-auto justify-content-center">
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/bitcoin.webp"
+                      alt="bitcoin-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/">BTC</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button " class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/ethereum.webp"
+                      alt="ethereum-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/eth">ETH</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button " class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/binance-coin.webp"
+                      alt="binance-coin-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/bnb">BNB</a>
+                  </button>
+                </div>
+                <div class="col active">
+                  <button type="button " class="btn-active btn-lg">
+                    <img
+                      src="/static/images/tether.webp"
+                      alt="tether-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/usdt" style="font-size: 28px">USDT</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/solana.webp"
+                      alt="solana-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/sol">SOL</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/usd-coin.webp"
+                      alt="usd-logo"
+                      style="width: 32px; float: left"
+                    />
+                    <a href="/dashboard/usdc" style="font-size: 26px">USDC</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="None">
+              <div class="row row-cols-auto justify-content-center">
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/cardano.webp"
+                      alt="cardano-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/ada">ADA</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/xrp.webp"
+                      alt="xrp-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/xrp">XRP</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/polkadot-new.webp"
+                      alt="polkadot-logo"
+                      style="width: 32px; float: left; margin-top: 7px"
+                    />
+                    <a href="/dashboard/dot">DOT</a>
+                  </button>
+                </div>
+                <div class="col not-active">
+                  <button type="button" class="btn-not-active btn-lg">
+                    <img
+                      src="/static/images/dogecoin.webp"
+                      alt="doge-logo"
+                      style="width: 32px; float: left"
+                    />
+                    <a href="/dashboard/doge" style="font-size: 26px">DOGE</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--End Coin Selector-->
+    <!--Dashboard-->
+    <section id="dashboard">
+      <div class="container">
+        <div
+          class="row row-cols-auto justify-content-center"
+          style="padding-top: 2rem; padding-bottom: 2rem"
+        >
+          <div class="col-md-6">
+            <div class="card plot">
+              <div class="card-body">
+                <h5 class="card-title">Historical Data</h5>
+                <div id="plot">{{ script | safe }}{{ div | safe }}</div>
+              </div>
+              <p class="update">*terakhir diperbarui {{date}} pukul {{time}}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card plot">
+              <div class="card-body">
+                <h5 class="card-title">Forecasting</h5>
+                <div id="plot">{{ fscript | safe }}{{ fdiv | safe }}</div>
+                <p class="update">*terakhir diperbarui {{tanggalf}} pukul {{jamf}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row row-cols-auto justify-content-center"
+          style="padding-top: 2rem; padding-bottom: 2rem"
+        >
+          <div class="col-md-6">
+            <div class="card plot" style="height: 450px">
+              <div class="card-body">
+                <h5 class="card-title">Sentiment Analysis</h5>
+                <div class="pie">{{pie|safe}}</div>
+                <p>*terakhir diperbarui {{tanggals}} pukul {{jams}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card plot" style="height: 450px">
+              <div class="card-body">
+                <h5 class="card-title">Word Cloud</h5>
+                <img
+                  src="/static/images/wordcloud/tether.png"
+                  alt="wordcloud"
+                  style="
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                    width: 600px;
+                    display: block;
+                    margin: 0 auto;
+                  "
+                />
+                <p>*terakhir diperbarui {{tanggals}} pukul {{jams}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row row-cols-auto justify-content-center"
+          style="padding-top: 2rem; padding-bottom: 2rem"
+        >
+          <div class="col-md-12">
+            {% if "Tidak ada peristiwa penting" in table1s %}
+            <div class="card" style="height: 645px">
+              <div class="card-body">
+                <h5 class="card-title">Peristiwa Yang Terjadi</h5>
+                <h6 class="card-subtitle" style="padding-top: 1rem">Hari Ini</h6>
+                <div class="table">{{table1s|safe}} {{table1d|safe}}</div>
+                <h6 class="card-subtitle" style="padding-top: 1rem">Yang Akan Datang</h6>
+                <div class="table">{{table2s|safe}} {{table2d|safe}}</div>
+              </div>
+            </div>
+            {% else %}
+            <div class="card" style="height: 1037px">
+              <div class="card-body">
+                <h5 class="card-title">Peristiwa Yang Terjadi</h5>
+                <h6 class="card-subtitle" style="padding-top: 1rem">Hari Ini</h6>
+                <div class="table">{{table1s|safe}} {{table1d|safe}}</div>
+                <h6 class="card-subtitle" style="padding-top: 1rem">Yang Akan Datang</h6>
+                <div class="table">{{table2s|safe}} {{table2d|safe}}</div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End Dashboard-->
+    <!--Footer-->
+    <footer style="margin-top: 2rem">
+      <div class="container">
+        <div class="row row-cols-auto">
+          <div class="col">
+            <img src="/static/images/Logo Slogan.png" alt="Logo Elevate" id="logo-bawah" />
+          </div>
+          <div class="col">
+            <div class="garis"></div>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled footer-nav">
+              <li><a href="/tentangkami/">Tentang Kami</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/dashboard/">Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="garis"></div>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled attrib">
+              <li>
+                <p>
+                  Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+                  <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </p>
+              </li>
+              <li><p>© 2021 Elevate. All rights reserved</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--End Footer-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

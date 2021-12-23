@@ -1,0 +1,228 @@
+@font-face {
+  font-family: 'inter-extrabold'; /* Change to your font's name. */
+  src: url('font/Inter-ExtraBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-bold'; /* Change to your font's name. */
+  src: url('font/Inter-Bold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-semibold'; /* Change to your font's name. */
+  src: url('font/Inter-SemiBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-medium'; /* Change to your font's name. */
+  src: url('font/Inter-Medium.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-regular'; /* Change to your font's name. */
+  src: url('font/Inter-VariableFont_slnt\,wght.ttf'); /* Change to match your font file's location. */
+}
+
+#main-nav {
+  background-color: #591fce;
+}
+
+.navbar-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  margin-right: 45px;
+  font-size: 16px;
+}
+
+.navbar-nav a:hover {
+  color: black;
+}
+
+#logo-navbar {
+  width: 150px;
+  height: 49.44px;
+  margin-left: 48px;
+}
+
+#logo-navbar:hover {
+  opacity: 70%;
+}
+
+.navbar {
+  height: 70px;
+}
+
+h1 {
+  font-family: inter-extrabold;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 56px;
+}
+
+#judul {
+  margin-left: 105px;
+  margin-top: 43px;
+}
+
+.nama {
+  font-family: 'inter-bold';
+  font-size: 20px;
+  padding-bottom: 0px;
+}
+
+.nim {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+#isi p {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  text-align: justify;
+  padding-top: 1rem;
+}
+
+.section1 {
+  background-image: url('/static/images/Section1.png');
+  background-size: cover;
+  height: 695px;
+}
+.section1 h3 {
+  /* Mari Mulai Kembangkan Portfolio Cryptocurrency Anda Bersama Kami */
+  margin-top: 180px;
+  margin-left: 50px;
+  font-family: 'inter-Bold';
+  font-size: 74px;
+  line-height: 77px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+
+.center h3 {
+  font-family: 'inter-extrabold';
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.section2 img {
+  margin-top: 50px;
+  margin-left: 280px;
+  margin-right: 180px;
+  width: 192px;
+}
+
+.section2 p {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 180px;
+  margin-right: 180px;
+  font-size: 22px;
+  font-family: 'inter-regular';
+}
+
+.section2 h3 {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'inter-Bold';
+  font-size: 40px;
+  margin-left: 180px;
+  margin-right: 180px;
+}
+
+.section3 {
+  background-image: url('/static/images/Section3.png');
+  background-size: cover;
+  height: 414px;
+}
+.section3 h3 {
+  /* Mari Mulai Kembangkan Portfolio Cryptocurrency Anda Bersama Kami */
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right: 150px;
+  font-family: 'inter-extrabold';
+  font-size: 43px;
+  line-height: 77px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+  text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.section3 a {
+  font-family: 'inter-Bold';
+  font-size: 28px;
+  text-align: center;
+}
+
+.rekomendasi {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.section4 {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.section4 a {
+  color: black;
+  font-size: 32px;
+  font-family: 'inter-extrabold';
+  text-align: justify;
+  text-decoration: none;
+}
+.section4 a:hover {
+  color: blue;
+}
+
+footer {
+  background-color: #a1f480;
+}
+
+#logo-bawah {
+  width: 380px;
+  margin-top: 29px;
+}
+
+.footer-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #444444;
+}
+
+.footer-nav li {
+  margin-top: 15px;
+}
+
+.garis {
+  height: 155px;
+  border: 2.5px solid #ffffff;
+}
+
+.attrib p {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.attrib li {
+  margin-top: 15px;
+}
+.attrib a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.attrib a:hover {
+  color: #444444;
+}

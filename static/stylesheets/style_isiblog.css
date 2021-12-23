@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'inter-extrabold'; /* Change to your font's name. */
+  src: url('font/Inter-ExtraBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-bold'; /* Change to your font's name. */
+  src: url('font/Inter-Bold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-semibold'; /* Change to your font's name. */
+  src: url('font/Inter-SemiBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-medium'; /* Change to your font's name. */
+  src: url('font/Inter-Medium.ttf'); /* Change to match your font file's location. */
+}
+
+#main-nav {
+  background-color: #591fce;
+}
+
+.navbar-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  margin-right: 45px;
+  font-size: 16px;
+}
+
+.navbar-nav a:hover {
+  color: black;
+}
+
+#logo-navbar {
+  width: 150px;
+  height: 49.44px;
+  margin-left: 48px;
+}
+
+#logo-navbar:hover {
+  opacity: 70%;
+}
+
+.navbar {
+  height: 70px;
+}
+
+h1 {
+  font-family: inter-extrabold;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 56px;
+}
+
+#judul {
+  margin-left: 105px;
+  margin-top: 43px;
+}
+
+.nama {
+  font-family: 'inter-bold';
+  font-size: 20px;
+  padding-bottom: 0px;
+}
+
+.nim {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+#isi p {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  text-align: justify;
+  padding-top: 1rem;
+}
+
+.international {
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.international h2 {
+  font-family: 'inter-bold';
+  font-size: 48px;
+}
+
+.title {
+  margin-left: 200px;
+  font-family: 'inter-extrabold';
+  font-size: 64px;
+}
+.title h1 {
+  font-family: 'inter-extrabold';
+  font-size: 64px;
+}
+
+.konten p {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 10px;
+}
+.konten p {
+  font-family: 'inter-reguler';
+  font-size: 25px;
+  text-align: justify;
+}
+.rekomendasi {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.section4 {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.section4 a {
+  color: black;
+  font-size: 32px;
+  font-family: 'inter-extrabold';
+  text-align: justify;
+  text-decoration: none;
+}
+.section4 a:hover {
+  color: blue;
+}
+
+footer {
+  background-color: #a1f480;
+}
+
+#logo-bawah {
+  width: 380px;
+  margin-top: 29px;
+}
+
+.footer-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #444444;
+}
+
+.footer-nav li {
+  margin-top: 15px;
+}
+
+.garis {
+  height: 155px;
+  border: 2.5px solid #ffffff;
+}
+
+.attrib p {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.attrib li {
+  margin-top: 15px;
+}
+.attrib a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.attrib a:hover {
+  color: #444444;
+}

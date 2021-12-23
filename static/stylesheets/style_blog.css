@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'inter-extrabold'; /* Change to your font's name. */
+  src: url('font/Inter-ExtraBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-bold'; /* Change to your font's name. */
+  src: url('font/Inter-Bold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-semibold'; /* Change to your font's name. */
+  src: url('font/Inter-SemiBold.ttf'); /* Change to match your font file's location. */
+}
+@font-face {
+  font-family: 'inter-medium'; /* Change to your font's name. */
+  src: url('font/Inter-Medium.ttf'); /* Change to match your font file's location. */
+}
+
+#main-nav {
+  background-color: #591fce;
+}
+
+.navbar-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  margin-right: 45px;
+  font-size: 16px;
+}
+
+.navbar-nav a:hover {
+  color: black;
+}
+
+#logo-navbar {
+  width: 150px;
+  height: 49.44px;
+  margin-left: 48px;
+}
+
+#logo-navbar:hover {
+  opacity: 70%;
+}
+
+.navbar {
+  height: 70px;
+}
+
+h1 {
+  font-family: inter-extrabold;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 56px;
+}
+
+#judul {
+  margin-left: 105px;
+  margin-top: 43px;
+}
+
+.nama {
+  font-family: 'inter-bold';
+  font-size: 20px;
+  padding-bottom: 0px;
+}
+
+.nim {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+#isi p {
+  font-family: 'inter-medium';
+  font-size: 20px;
+  text-align: justify;
+  padding-top: 1rem;
+}
+
+.section1 {
+  background: #591fce;
+  background-size: cover;
+  height: 695px;
+}
+
+.section1 img {
+  margin-top: 120px;
+  margin-left: 180px;
+}
+
+.section1 h3 {
+  font-family: 'inter-medium';
+  font-size: 52px;
+  font-weight: 200;
+  color: #ffffff;
+  margin-top: 130px;
+  margin-left: 80px;
+}
+.section1 p {
+  color: #ffffff;
+  margin-top: 0px;
+  margin-left: 80px;
+  margin-right: 120px;
+  text-align: justify;
+}
+.section1 a {
+  margin-top: 0px;
+  margin-left: 80px;
+}
+
+.section2 img {
+  margin-top: 50px;
+  margin-left: 180px;
+}
+
+.section2 p {
+  text-align: justify;
+  margin-left: 180px;
+  margin-right: 120px;
+}
+
+.section2 h3 {
+  font-family: 'inter-medium';
+  font-size: 42px;
+  margin-left: 180px;
+  margin-right: 120px;
+}
+
+.section2 a {
+  margin-left: 180px;
+}
+
+.section3 img {
+  margin-top: 50px;
+  margin-left: 180px;
+}
+
+.section3 p {
+  text-align: justify;
+  margin-left: 180px;
+  margin-right: 120px;
+}
+
+.section3 h3 {
+  font-family: 'inter-medium';
+  font-size: 42px;
+  margin-left: 180px;
+  margin-right: 120px;
+}
+
+.section3 a {
+  margin-left: 180px;
+  margin-bottom: 50px;
+}
+
+footer {
+  background-color: #a1f480;
+}
+
+#logo-bawah {
+  width: 380px;
+  margin-top: 29px;
+}
+
+.footer-nav a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #444444;
+}
+
+.footer-nav li {
+  margin-top: 15px;
+}
+
+.garis {
+  height: 155px;
+  border: 2.5px solid #ffffff;
+}
+
+.attrib p {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.attrib li {
+  margin-top: 15px;
+}
+.attrib a {
+  font-family: 'inter-bold';
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.attrib a:hover {
+  color: #444444;
+}
