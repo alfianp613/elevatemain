@@ -137,3 +137,29 @@ def piechart(data):
                     output_type='div')
     return pc
 
+def rekomendasi(datas,dataf):
+    """ 1. rekomendasi turun sentimen positif
+        2. rekomendasi turun sentimen negatif
+        3. rekomendasi turun sentimen netral
+        4. rekomendasi naik sentimen negatif
+        5. rekomendasi naik sentimen positif
+        6. rekomendasi naik sentimen netral
+    """
+    index_max = datas['total'].index(max(datas['total']))
+    sentiment_max = datas['sentiment'][index_max]
+    selisih = dataf['close'][1]-dataf['close'][0]
+    if (sentiment_max == 'Positif') and (selisih < 0):
+        return 'Hasil peramalan menunjukkan penurunan harga dan sentimen komunitas twitter menunjukkan mayoritas positif. Kami merekomendasikan Anda untuk membeli saat ini karena harga cenderung turun dan karena sentimen positif menandakan ada kemungkinan harga akan naik. Untuk yang sedang keep, lebih baik di keep dulu saja hingga harga naik kembali.'
+    elif (sentiment_max == 'Negatif') and (selisih < 0):
+        return 'Hasil peramalan menunjukkan penurunan harga dan sentimen komunitas twitter menunjukkan mayoritas negatif. Kami merekomendasikan Anda untuk jangan dulu membeli saat ini karena harga cenderung turun dan karena sentimen negatif menandakan ada kemungkinan harga akan terus menurun. Untuk yang sedang keep, lebih baik di keep dulu saja hingga harga naik kembali.'
+    elif (sentiment_max == 'Netral') and (selisih < 0):
+        return 'Hasil peramalan menunjukkan penurunan harga dan sentimen komunitas twitter menunjukkan mayoritas netral. Kami merekomendasikan Anda untuk membeli saat ini karena harga cenderung turun dan karena sentimen netral menandakan ada kemungkinan harga akan stabil. Untuk yang sedang keep, lebih baik di keep dulu saja hingga harga naik kembali.'
+    elif (sentiment_max == 'Positif') and (selisih > 0):
+        return 'Hasil peramalan menunjukkan kenaikan harga dan sentimen komunitas twitter menunjukkan mayoritas positif. Kami merekomendasikan anda untuk membeli saat ini karena harga cenderung terus naik dan karena sentimen positif menandakan ada kemungkinan harga akan terus naik. Untuk yang sedang keep, jika anda ingin mengambil resiko lebih baik di keep hingga harga yang anda inginkan tercapai, namun jika anda ingin bermain aman dan sudah cukup untung lebih baik menjualnya sekarang.'
+    elif (sentiment_max == 'Negatif') and (selisih > 0):
+        return 'Hasil peramalan menunjukkan kenaikan harga dan sentimen komunitas twitter menunjukkan mayoritas negatif. Kami merekomendasikan anda untuk jangan membeli saat ini karena harga cenderung terus naik dan karena sentimen negatif menandakan ada kemungkinan harga akan turun. Untuk yang sedang keep, inilah saat yang tepat untuk anda menjual.'
+    else:
+        return 'Hasil peramalan menunjukkan kenaikan harga dan sentimen komunitas twitter menunjukkan mayoritas netral. Kami merekomendasikan anda untuk membeli saat ini karena harga cenderung terus naik dan karena sentimen netral menandakan ada kemungkinan harga akan stabil. Untuk yang sedang keep, jika anda ingin mengambil resiko lebih baik di keep hingga harga yang anda inginkan tercapai, namun jika anda ingin bermain aman dan sudah cukup untung lebih baik menjualnya sekarang.'
+    
+    
+

@@ -4,7 +4,7 @@ import datetime
 import json
 import requests
 app = Flask(__name__)
-from datetime import date
+from datetime import date, timedelta
 
 # Static Page
 @app.route('/')
@@ -53,23 +53,28 @@ def dashboard():
     #ambil data forecast
     r3 = requests.post('https://elevatecrypto-api.herokuapp.com/api/forecast', json={'status': 'minta datanya dong','koin':'bitcoin'})
     dataf = r3.json()
-    fscript, fdiv = forecast(dataf)
+    fscript, fdiv = forecast(dataf) 
     tanggalf=dataf['date']
     jamf=dataf['jam']
     now = datetime.datetime.now()
     tanggal = date.today()
+    
     sekarang = tanggal.strftime("%d/%m/%Y")
     
     script, div = main('bitcoin','01/07/2010',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 @app.route('/dashboard/eth')
 def dashboard_eth():
@@ -92,8 +97,11 @@ def dashboard_eth():
     script, div = main('ethereum','01/03/2016',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     return render_template('dashboard_eth.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
@@ -121,8 +129,11 @@ def dashboard_bnb():
     script, div = main('binance coin','01/11/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     return render_template('dashboard_bnb.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
@@ -150,13 +161,17 @@ def dashboard_usdt():
     script, div = main('tether','01/04/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_usdt.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 @app.route('/dashboard/sol')
 def dashboard_sol():
@@ -179,8 +194,11 @@ def dashboard_sol():
     script, div = main('solana','01/07/2020',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     return render_template('dashboard_sol.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
@@ -208,8 +226,11 @@ def dashboard_usdc():
     script, div = main('usd coin','01/12/2018',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     return render_template('dashboard_usdc.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,

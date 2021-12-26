@@ -154,6 +154,12 @@ button a {
   padding-top: 0.5rem;
 }
 
+#rekomendasi {
+  color: black;
+  font-size: 18px;
+  text-align: justify;
+}
+
 .update {
   color: rgba(0, 0, 0, 0.6);
   font-family: 'inter-reguler';
