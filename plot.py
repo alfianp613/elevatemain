@@ -30,7 +30,7 @@ def main(coin,tanggal_awal,tanggal_akhir):
 
     date_range_slider.js_link("value", p.x_range, "start", attr_selector=0)
     date_range_slider.js_link("value", p.x_range, "end", attr_selector=1)
-    layout = column(date_range_slider, p, width=550,height=306)
+    layout = column(date_range_slider, p, sizing_mode="scale_width")
     
     script, div = components(layout)
     
@@ -50,8 +50,8 @@ def forecast(data):
     hover.tooltips = [('date', '@x{%Y-%m-%d}'), ('close', '$@{y}{0.2f}')]
     hover.formatters = {'@x': 'datetime','@y' : 'printf'}
     p.add_tools(hover)
-    
-    script, div = components(p)
+    layout = column(p, sizing_mode="scale_width")
+    script, div = components(layout)
     
     return script, div
 
@@ -86,7 +86,7 @@ def tablenow(tanggal_awal,tanggal_akhir):
             TableColumn(field="importance", title="Importance",width=70),
             TableColumn(field="event", title="Event",width=550),
         ]
-        data_table = DataTable(source=source, columns=columns, width=924,autosize_mode="fit_columns")
+        data_table = DataTable(source=source, columns=columns,autosize_mode="fit_columns",sizing_mode="stretch_both")
         script, div = components(data_table)
         return script,div
 
@@ -120,7 +120,7 @@ def tablecoming(tanggal_awal,tanggal_akhir):
        TableColumn(field="event", title="Event",width=550),
        ]
    
-    data_table = DataTable(source=source, columns=columns, width=924,autosize_mode="fit_columns")
+    data_table = DataTable(source=source, columns=columns,autosize_mode="fit_columns",sizing_mode="stretch_both")
     script, div = components(data_table)
     return script,div
 

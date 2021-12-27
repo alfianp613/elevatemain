@@ -24,11 +24,14 @@
 }
 
 body {
-  height: 2000px;
   background-color: #f6f8fb;
 }
 
 #main-nav {
+  background-color: #591fce;
+}
+
+#navbarNav {
   background-color: #591fce;
 }
 
@@ -130,7 +133,8 @@ button a {
 
 #dashboard {
   background-color: #591fce;
-  width: 1384px;
+  width: 1400px;
+  padding: 1rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
@@ -185,7 +189,6 @@ button a {
   margin-left: 50px;
 }
 .card {
-  height: 480px;
   filter: drop-shadow(5px 12px 12px rgba(16, 30, 115, 0.75));
 }
 
@@ -243,4 +246,24 @@ footer {
 }
 .attrib a:hover {
   color: #444444;
+}
+
+@media only screen and (max-width: 990px) {
+  #judul {
+    margin-left: 50px;
+    margin-top: 43px;
+  }
+  #dashboard {
+    background-color: #591fce;
+    width: 1400/2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  .card {
+    width: 50%;
+  }
+  .garis {
+    display: none;
+  }
 }

@@ -58,9 +58,7 @@ def dashboard():
     jamf=dataf['jam']
     now = datetime.datetime.now()
     tanggal = date.today()
-    
     sekarang = tanggal.strftime("%d/%m/%Y")
-    
     script, div = main('bitcoin','01/07/2010',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
@@ -103,10 +101,11 @@ def dashboard_eth():
     table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_eth.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 @app.route('/dashboard/bnb')
 def dashboard_bnb():
@@ -135,10 +134,11 @@ def dashboard_bnb():
     table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_bnb.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 @app.route('/dashboard/usdt')
 def dashboard_usdt():
@@ -200,10 +200,11 @@ def dashboard_sol():
     table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_sol.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 @app.route('/dashboard/usdc')
 def dashboard_usdc():
@@ -232,10 +233,12 @@ def dashboard_usdc():
     table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_usdc.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
+    
 @app.route('/dashboard/ada')
 def dashboard_ada():
     r = requests.post('https://elevatecrypto-api.herokuapp.com/api/datasentiment', json={'status': 'minta datanya dong','koin':'cardano'})
@@ -257,13 +260,18 @@ def dashboard_ada():
     script, div = main('cardano','01/12/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_ada.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
+    
 @app.route('/dashboard/xrp')
 def dashboard_xrp():
     r = requests.post('https://elevatecrypto-api.herokuapp.com/api/datasentiment', json={'status': 'minta datanya dong','koin':'xrp'})
@@ -285,13 +293,18 @@ def dashboard_xrp():
     script, div = main('xrp','21/01/2015',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_xrp.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
+    
 @app.route('/dashboard/dot')
 def dashboard_dot():
     r = requests.post('https://elevatecrypto-api.herokuapp.com/api/datasentiment', json={'status': 'minta datanya dong','koin':'polkadot'})
@@ -313,13 +326,17 @@ def dashboard_dot():
     script, div = main('polkadot','01/02/2021',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_dot.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
     
 @app.route('/dashboard/doge')
 def dashboard_doge():
@@ -342,13 +359,17 @@ def dashboard_doge():
     script, div = main('dogecoin','01/06/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
-    table1s,table1d = tablenow(f'{now.day-2}/{now.month}/{now.year}',f'{now.day}/{now.month}/{now.year}')
-    table2s,table2d = tablecoming(f'{now.day}/{now.month}/{now.year}',f'{now.day+7}/{now.month}/{now.year}')
+    minggu = datetime.datetime.now() + timedelta(days=7)
+    hari2 = datetime.datetime.now() - timedelta(days=2)
+    hari1 = datetime.datetime.now() + timedelta(days=1)
+    table1s,table1d = tablenow(f'{hari2.day}/{hari2.month}/{hari2.year}',f'{now.day}/{now.month}/{now.year}')
+    table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
+    rek = rekomendasi(data,dataf)
     return render_template('dashboard_doge.html',script=script,div=div,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
-                           tanggalf=tanggalf,jamf=jamf)
+                           tanggalf=tanggalf,jamf=jamf,rekom=rek)
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8000,debug=True)
