@@ -13,28 +13,12 @@ def main(coin,tanggal_awal,tanggal_akhir):
     data = investpy.get_crypto_historical_data(crypto=coin,
                                            from_date=tanggal_awal,
                                            to_date=tanggal_akhir)
-    x = data.index
-    y = data['Close']
-
-    p = figure(title="", x_axis_label="Tanggal", y_axis_label="Harga(USD)",x_axis_type='datetime',plot_width=610,plot_height=306)
-
-    l = p.line(x, y, line_width=2)
-    c = p.circle(x, y, size=3)
-
-    hover = HoverTool(mode = 'vline')
-    hover.tooltips = [('date', '@x{%Y-%m-%d}'), ('close', '$@{y}{0.2f}')]
-    hover.formatters = {'@x': 'datetime','@y' : 'printf'}
-    p.add_tools(hover)
-    date_range_slider = DateRangeSlider(value=(min(data.index), max(data.index)),
-                                    start=min(data.index), end=max(data.index))
-
-    date_range_slider.js_link("value", p.x_range, "start", attr_selector=0)
-    date_range_slider.js_link("value", p.x_range, "end", attr_selector=1)
-    layout = column(date_range_slider, p, sizing_mode="scale_width")
-    
-    script, div = components(layout)
-    
-    return script, div
+    data['Date'] = data.index
+    data['Date']=data['Date'].apply(lambda x:x.strftime("%Y-%m-%d %H:%M:%S"))
+    data['Date'][-1] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    x = list(data['Date'])
+    y = list(data['Close'])
+    return x,y
 def forecast(data):
     
     x = [datetime.strptime(x,'%Y-%m-%d') for x in data['tanggal']]
@@ -47,10 +31,10 @@ def forecast(data):
     c = p.circle(x, y, size=3)
 
     hover = HoverTool(mode = 'vline')
-    hover.tooltips = [('date', '@x{%Y-%m-%d}'), ('close', '$@{y}{0.2f}')]
+    hover.tooltips = [('Tanggal', '@x{%Y-%m-%d}'), ('Price', '$@{y}{0.2f}')]
     hover.formatters = {'@x': 'datetime','@y' : 'printf'}
     p.add_tools(hover)
-    layout = column(p, sizing_mode="scale_width")
+    layout = column(p, sizing_mode="stretch_both")
     script, div = components(layout)
     
     return script, div
@@ -160,6 +144,5 @@ def rekomendasi(datas,dataf):
         return 'Hasil peramalan menunjukkan kenaikan harga dan sentimen komunitas twitter menunjukkan mayoritas negatif. Kami merekomendasikan anda untuk jangan membeli saat ini karena harga cenderung terus naik dan karena sentimen negatif menandakan ada kemungkinan harga akan turun. Untuk yang sedang keep, inilah saat yang tepat untuk anda menjual.'
     else:
         return 'Hasil peramalan menunjukkan kenaikan harga dan sentimen komunitas twitter menunjukkan mayoritas netral. Kami merekomendasikan anda untuk membeli saat ini karena harga cenderung terus naik dan karena sentimen netral menandakan ada kemungkinan harga akan stabil. Untuk yang sedang keep, jika anda ingin mengambil resiko lebih baik di keep hingga harga yang anda inginkan tercapai, namun jika anda ingin bermain aman dan sudah cukup untung lebih baik menjualnya sekarang.'
-    
-    
+
 

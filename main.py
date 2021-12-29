@@ -59,7 +59,7 @@ def dashboard():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('bitcoin','01/07/2010',sekarang)
+    x,y = main('bitcoin','01/07/2010',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -69,7 +69,7 @@ def dashboard():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -92,7 +92,7 @@ def dashboard_eth():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('ethereum','01/03/2016',sekarang)
+    x,y = main('ethereum','01/03/2016',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -102,7 +102,7 @@ def dashboard_eth():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_eth.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_eth.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -125,7 +125,7 @@ def dashboard_bnb():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('binance coin','01/11/2017',sekarang)
+    x, y = main('binance coin','01/11/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -135,7 +135,7 @@ def dashboard_bnb():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_bnb.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_bnb.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -158,7 +158,7 @@ def dashboard_usdt():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('tether','01/04/2017',sekarang)
+    x, y = main('tether','01/04/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -168,7 +168,7 @@ def dashboard_usdt():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_usdt.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_usdt.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -191,7 +191,7 @@ def dashboard_sol():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('solana','01/07/2020',sekarang)
+    x, y = main('solana','01/07/2020',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -201,7 +201,7 @@ def dashboard_sol():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_sol.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_sol.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -224,7 +224,7 @@ def dashboard_usdc():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('usd coin','01/12/2018',sekarang)
+    x, y = main('usd coin','01/12/2018',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -234,7 +234,7 @@ def dashboard_usdc():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_usdc.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_usdc.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -257,7 +257,7 @@ def dashboard_ada():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('cardano','01/12/2017',sekarang)
+    x, y = main('cardano','01/12/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -267,7 +267,7 @@ def dashboard_ada():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_ada.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_ada.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -290,7 +290,7 @@ def dashboard_xrp():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('xrp','21/01/2015',sekarang)
+    x, y = main('xrp','21/01/2015',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -300,7 +300,7 @@ def dashboard_xrp():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_xrp.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_xrp.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -323,7 +323,7 @@ def dashboard_dot():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('polkadot','01/02/2021',sekarang)
+    x, y = main('polkadot','01/02/2021',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -333,7 +333,7 @@ def dashboard_dot():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_dot.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_dot.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
@@ -356,7 +356,7 @@ def dashboard_doge():
     now = datetime.datetime.now()
     tanggal = date.today()
     sekarang = tanggal.strftime("%d/%m/%Y")
-    script, div = main('dogecoin','01/06/2017',sekarang)
+    x, y = main('dogecoin','01/06/2017',sekarang)
     dates = f'{now.day}/{now.month}/{now.year}'
     time = f'{now.strftime("%H")}:{now.strftime("%M")}'
     minggu = datetime.datetime.now() + timedelta(days=7)
@@ -366,7 +366,7 @@ def dashboard_doge():
     table2s,table2d = tablecoming(f'{hari1.day}/{hari1.month}/{hari1.year}',f'{minggu.day+7}/{minggu.month}/{minggu.year}')
     pie = piechart(data)
     rek = rekomendasi(data,dataf)
-    return render_template('dashboard_doge.html',script=script,div=div,date=dates,time=time,
+    return render_template('dashboard_doge.html',x=x,y=y,date=dates,time=time,
                            table1s=table1s,table1d=table1d,table2s=table2s,table2d=table2d,
                            pie=pie,fscript=fscript,fdiv=fdiv,jams=jams,tanggals=tanggals,
                            tanggalf=tanggalf,jamf=jamf,rekom=rek)
