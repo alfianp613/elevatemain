@@ -76,29 +76,29 @@ h1 {
 }
 
 .section1 {
-  background: #591fce;
+  background-color: #591fce;
   background-size: cover;
-  height: 695px;
+  height: 995px;
 }
 
 .section1 img {
   margin-top: 120px;
-  margin-left: 180px;
+  margin-left: 20px;
 }
 
 .section1 h3 {
   font-family: 'inter-medium';
-  font-size: 52px;
+  font-size: 40px;
   font-weight: 200;
   color: #ffffff;
-  margin-top: 130px;
-  margin-left: 80px;
+  margin-top: 0px;
+  margin-left: 40px;
 }
 .section1 p {
   color: #ffffff;
   margin-top: 0px;
-  margin-left: 80px;
-  margin-right: 120px;
+  margin-left: 40px;
+  margin-right: 40px;
   text-align: justify;
 }
 .section1 a {
@@ -106,49 +106,12 @@ h1 {
   margin-left: 80px;
 }
 
-.section2 img {
-  margin-top: 50px;
-  margin-left: 180px;
+.section2 h3 {
+  text-align: justify;
 }
 
 .section2 p {
   text-align: justify;
-  margin-left: 180px;
-  margin-right: 120px;
-}
-
-.section2 h3 {
-  font-family: 'inter-medium';
-  font-size: 42px;
-  margin-left: 180px;
-  margin-right: 120px;
-}
-
-.section2 a {
-  margin-left: 180px;
-}
-
-.section3 img {
-  margin-top: 50px;
-  margin-left: 180px;
-}
-
-.section3 p {
-  text-align: justify;
-  margin-left: 180px;
-  margin-right: 120px;
-}
-
-.section3 h3 {
-  font-family: 'inter-medium';
-  font-size: 42px;
-  margin-left: 180px;
-  margin-right: 120px;
-}
-
-.section3 a {
-  margin-left: 180px;
-  margin-bottom: 50px;
 }
 
 footer {
@@ -198,4 +161,43 @@ footer {
 }
 .attrib a:hover {
   color: #444444;
+}
+
+@media (min-width: 992px) {
+  .section1 {
+    background-color: #591fce;
+    background-size: cover;
+    height: 695px;
+  }
+
+  .section1 img {
+    margin-top: 120px;
+    margin-left: 180px;
+  }
+
+  .section1 h3 {
+    font-family: 'inter-medium';
+    font-size: 52px;
+    font-weight: 200;
+    color: #ffffff;
+    margin-top: 130px;
+    margin-left: 80px;
+  }
+  .section1 p {
+    color: #ffffff;
+    margin-top: 0px;
+    margin-left: 80px;
+    margin-right: 120px;
+    text-align: justify;
+  }
+  .section1 a {
+    margin-top: 0px;
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .garis {
+    display: none;
+  }
 }

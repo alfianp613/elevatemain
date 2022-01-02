@@ -48,24 +48,23 @@ h1 {
   font-family: inter-extrabold;
   font-style: normal;
   font-weight: 800;
-  font-size: 56px;
+  font-size: 40px;
+  text-align: start;
+  padding-top: 1rem;
+}
+
+h2 {
+  font-family: inter-extrabold;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: justify;
+  padding-top: 1rem;
 }
 
 #judul {
   margin-left: 105px;
   margin-top: 43px;
-}
-
-.nama {
-  font-family: 'inter-bold';
-  font-size: 20px;
-  padding-bottom: 0px;
-}
-
-.nim {
-  font-family: 'inter-medium';
-  font-size: 20px;
-  padding-top: 0px;
 }
 
 #isi p {
@@ -75,39 +74,10 @@ h1 {
   padding-top: 1rem;
 }
 
-.international {
-  margin-left: 200px;
-  margin-top: 100px;
-}
-
-.international h2 {
-  font-family: 'inter-bold';
-  font-size: 48px;
-}
-
-.title {
-  margin-left: 200px;
-  font-family: 'inter-extrabold';
-  font-size: 64px;
-}
-.title h1 {
-  font-family: 'inter-extrabold';
-  font-size: 64px;
-}
-
-.konten p {
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 10px;
-}
-.konten p {
-  font-family: 'inter-reguler';
-  font-size: 25px;
-  text-align: justify;
-}
-.rekomendasi {
+.rekomendasi h1 {
   margin-top: 50px;
   margin-left: 50px;
+  font-size: 40px;
 }
 
 .section4 {
@@ -174,4 +144,34 @@ footer {
 }
 .attrib a:hover {
   color: #444444;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-family: inter-extrabold;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 56px;
+    text-align: justify;
+    padding-top: 1rem;
+  }
+
+  h2 {
+    font-family: inter-extrabold;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 45px;
+    text-align: justify;
+    padding-top: 1rem;
+  }
+  .rekomendasi h1 {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .garis {
+    display: none;
+  }
 }

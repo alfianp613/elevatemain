@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style_isiblog.css') }}" />
     <title>Apa itu Bitcoin?</title>
     <link rel="icon" href="/static/images/Logo no tulisan.png" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/c914a9e0c3.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!--Navbar-->
+   <!--Navbar-->
     <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
-      <div class="container-fluid">
+      <div class="container-fluid" style="background-color: #591fce">
         <a class="navbar-brand" href="/" id="logo-navbar">
           <img src="/static/images/Elevate Logo tulisan putih.png" width="150px"
         /></a>
@@ -27,8 +28,11 @@
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          style="border: 1px solid #fff"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span>
+            <i class="fas fa-bars" style="color: #fff"></i>
+          </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -46,32 +50,35 @@
       </div>
     </nav>
     <!--End Navbar-->
-
     <!-- Section 1 -->
-    <div class="row international">
-      <div class="col">
+    <section id="heading" style="margin-top: 5rem">
+      <div class="container">
         <h2>International</h2>
-      </div>
-    </div>
-    <div class="row title">
-      <div class="col">
         <h1>Apa itu Bitcoin?</h1>
-        <img src="/static/images/kontenberita2.png" alt="section1" class="img-fluid" />
+        <div class="container" style="margin-top: 2rem">
+          <div class="row text-center">
+            <div class="col-md">
+              <img src="/static/images/kontenberita2.png" alt="section1" class="img-fluid" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row konten">
-      <div class="col">
-        <p>Sumber : Pintu | Editor : Ilham Ahmad Kamil</p>
-        <p>Bitcoin adalah mata uang digital yang didistribusikan secara elektronik dan tidak dikeluarkan atau dikendalikan oleh pemerintah mana pun. Dijalankan oleh serangkaian komputer di seluruh dunia yang membentuk jaringan keuangan terdesentralisasi, bitcoin dapat digunakan untuk menyimpan nilai dan dapat dikirim kapan pun ke siapa saja di mana saja. Perangkat lunak Bitcoin berbentuk open source, artinya siapa pun di seluruh dunia dapat menjalankan server Bitcoin dan berpartisipasi menjadi bagian dari jaringan.</p>
-        <p>Bitcoin diciptakan pada tahun 2009 oleh seseorang dengan nama samaran “Satoshi Nakamoto”. Tidak seperti uang pemerintah seperti dolar AS atau euro, bitcoin sebagai mata uang memiliki persediaan terbatas. Hanya akan ada 21 juta bitcoin yang bisa ada di dunia ini. Inilah yang membuat bitcoin unik. Bitcoin adalah aset digital langka pertama yang pasokannya tidak dapat ditambah dan dicetak seperti uang.</p>
-        <p>Bitcoin berharga karena transaksinya tidak memerlukan perantara. Siapa pun dapat mengirim dan menerima Bitcoin di seluruh dunia tanpa membutuhkan perantara melalui koneksi internet. Bitcoin tahan sensor, artinya tidak ada yang bisa menghentikan transaksi bitcoin. Bitcoin juga terdesentralisasi, yang berarti setiap orang dapat berpartisipasi menjadi bagian dari jaringan. Setiap transaksi bitcoin dicatat secara terbuka sehingga setiap orang dapat memvalidasi setiap transaksi. Bitcoin juga dijamin dengan kriptografi yang tidak mungkin ditembus, menjadikannya jaringan moneter terkuat di dunia.</p>
-        <p>Banyak orang berinvestasi bitcoin karena bitcoin dinilai sebagai penyimpan nilai dan dapat melindungi aset mereka dari inflasi. Bitcoin menjadi penyimpan nilai yang mirip dengan emas karena ia langka dan sulit diproduksi. Akan tetapi, bitcoin sebenarnya lebih baik dari emas. Tidak seperti emas, bitcoin dapat dikirim ke mana saja secara global 24/7 dan hampir tidak ada biaya untuk memindahkannya. Dikarenakan kelangkaan, keamanan, likuiditas yang tinggi, dan ketersediaannya secara global, banyak orang percaya bahwa harga bitcoin akan naik seiring waktu dan dapat menjadi mata uang alternatif di masa depan.</p>
-        <p>Harga Bitcoin didasarkan dari penawaran dan permintaan. Pasokan Bitcoin terbatas tetapi permintaan terus naik, itulah sebabnya harga Bitcoin naik dari tahun ke tahun. Setiap hari orang di seluruh dunia akan membeli dan menjual Bitcoin, mereka akan membuat penawaran dan juga menawar harga untuk Bitcoin melalui pertukaran kripto. Aktivitas ini menciptakan volatilitas harga Bitcoin karena pasar Bitcoin berjalan 24/7 tanpa henti. Faktor lain yang memengaruhi harga Bitcoin adalah separuh. Halving Bitcoin menciptakan kelangkaan Bitcoin yang lebih tinggi, mengurangi tingkat pasokan Bitcoin baru. Karena pasokan menurun sementara permintaan untuk Bitcoin tetap sama atau bahkan meningkat, orang-orang bersedia membayar lebih untuk mendapatkan Bitcoin.</p>
-        <p>Bitcoin legal di sebagian besar negara. Di Indonesia, Bitcoin diakui oleh Kementerian Perdagangan Republik Indonesia, BAPPEBTI, sebagai komoditas menurut “Peraturan BAPPEBTI No. 5 Tahun 2019”. Namun di Indonesia, Bitcoin tidak diakui sebagai legal tender atau alat pembayaran resmi, karena alat pembayaran resmi di Indonesia adalah mata uang Rupiah.</p>
-        <p>Investasi bitcoin itu aman. Akan tetapi, karena transaksi Bitcoin tidak dapat diubah, sebagai investor kamu harus bertanggung jawab atas kepemilikan bitcoinmu dan mempelajari sendiri tentang cara mengamankan Bitcoin yang kamu punya. Melalui blockchain, Bitcoin menyediakan protokol keuangan yang aman yang dapat diakses dengan internet. Bitcoin adalah investasi terbaik jika seorang investor ingin membedakan jenis investasi (diversifikasi portofolio) yang ia miliki karena Bitcoin tahan sensor, terbatas, aman, dan terdesentralisasi.</p>
-        <p>Satu hal yang perlu diingat, ketika kamu menyimpan Bitcoinmu sendiri, kamu bertanggung jawab sepenuhnya atas Bitcoin yang kamu miliki. Jika kamu secara tidak sengaja kehilangan akses ke dompet tempat kamu menyimpan Bitcoin, maka tidak akan ada layanan pelanggan yang dapat membantu.</p>
+    </section>
+    <section id="isi">
+      <div class="container">
+        <div class="row" id="isi">
+          <p>Sumber : Pintu | Editor : Ilham Ahmad Kamil</p>
+          <p>Bitcoin adalah mata uang digital yang didistribusikan secara elektronik dan tidak dikeluarkan atau dikendalikan oleh pemerintah mana pun. Dijalankan oleh serangkaian komputer di seluruh dunia yang membentuk jaringan keuangan terdesentralisasi, bitcoin dapat digunakan untuk menyimpan nilai dan dapat dikirim kapan pun ke siapa saja di mana saja. Perangkat lunak Bitcoin berbentuk open source, artinya siapa pun di seluruh dunia dapat menjalankan server Bitcoin dan berpartisipasi menjadi bagian dari jaringan.</p>
+          <p>Bitcoin diciptakan pada tahun 2009 oleh seseorang dengan nama samaran “Satoshi Nakamoto”. Tidak seperti uang pemerintah seperti dolar AS atau euro, bitcoin sebagai mata uang memiliki persediaan terbatas. Hanya akan ada 21 juta bitcoin yang bisa ada di dunia ini. Inilah yang membuat bitcoin unik. Bitcoin adalah aset digital langka pertama yang pasokannya tidak dapat ditambah dan dicetak seperti uang.</p>
+          <p>Bitcoin berharga karena transaksinya tidak memerlukan perantara. Siapa pun dapat mengirim dan menerima Bitcoin di seluruh dunia tanpa membutuhkan perantara melalui koneksi internet. Bitcoin tahan sensor, artinya tidak ada yang bisa menghentikan transaksi bitcoin. Bitcoin juga terdesentralisasi, yang berarti setiap orang dapat berpartisipasi menjadi bagian dari jaringan. Setiap transaksi bitcoin dicatat secara terbuka sehingga setiap orang dapat memvalidasi setiap transaksi. Bitcoin juga dijamin dengan kriptografi yang tidak mungkin ditembus, menjadikannya jaringan moneter terkuat di dunia.</p>
+          <p>Banyak orang berinvestasi bitcoin karena bitcoin dinilai sebagai penyimpan nilai dan dapat melindungi aset mereka dari inflasi. Bitcoin menjadi penyimpan nilai yang mirip dengan emas karena ia langka dan sulit diproduksi. Akan tetapi, bitcoin sebenarnya lebih baik dari emas. Tidak seperti emas, bitcoin dapat dikirim ke mana saja secara global 24/7 dan hampir tidak ada biaya untuk memindahkannya. Dikarenakan kelangkaan, keamanan, likuiditas yang tinggi, dan ketersediaannya secara global, banyak orang percaya bahwa harga bitcoin akan naik seiring waktu dan dapat menjadi mata uang alternatif di masa depan.</p>
+          <p>Harga Bitcoin didasarkan dari penawaran dan permintaan. Pasokan Bitcoin terbatas tetapi permintaan terus naik, itulah sebabnya harga Bitcoin naik dari tahun ke tahun. Setiap hari orang di seluruh dunia akan membeli dan menjual Bitcoin, mereka akan membuat penawaran dan juga menawar harga untuk Bitcoin melalui pertukaran kripto. Aktivitas ini menciptakan volatilitas harga Bitcoin karena pasar Bitcoin berjalan 24/7 tanpa henti. Faktor lain yang memengaruhi harga Bitcoin adalah separuh. Halving Bitcoin menciptakan kelangkaan Bitcoin yang lebih tinggi, mengurangi tingkat pasokan Bitcoin baru. Karena pasokan menurun sementara permintaan untuk Bitcoin tetap sama atau bahkan meningkat, orang-orang bersedia membayar lebih untuk mendapatkan Bitcoin.</p>
+          <p>Bitcoin legal di sebagian besar negara. Di Indonesia, Bitcoin diakui oleh Kementerian Perdagangan Republik Indonesia, BAPPEBTI, sebagai komoditas menurut “Peraturan BAPPEBTI No. 5 Tahun 2019”. Namun di Indonesia, Bitcoin tidak diakui sebagai legal tender atau alat pembayaran resmi, karena alat pembayaran resmi di Indonesia adalah mata uang Rupiah.</p>
+          <p>Investasi bitcoin itu aman. Akan tetapi, karena transaksi Bitcoin tidak dapat diubah, sebagai investor kamu harus bertanggung jawab atas kepemilikan bitcoinmu dan mempelajari sendiri tentang cara mengamankan Bitcoin yang kamu punya. Melalui blockchain, Bitcoin menyediakan protokol keuangan yang aman yang dapat diakses dengan internet. Bitcoin adalah investasi terbaik jika seorang investor ingin membedakan jenis investasi (diversifikasi portofolio) yang ia miliki karena Bitcoin tahan sensor, terbatas, aman, dan terdesentralisasi.</p>
+          <p>Satu hal yang perlu diingat, ketika kamu menyimpan Bitcoinmu sendiri, kamu bertanggung jawab sepenuhnya atas Bitcoin yang kamu miliki. Jika kamu secara tidak sengaja kehilangan akses ke dompet tempat kamu menyimpan Bitcoin, maka tidak akan ada layanan pelanggan yang dapat membantu.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Section 4 -->
     <div class="row rekomendasi">
@@ -80,15 +87,15 @@
       </div>
     </div>
     <div class="row section4">
-      <div class="col">
+      <div class="col-md-4">
         <img src="/static/images/berita3.jpg" alt="section4" class="img-fluid">
         <a href='/blog/berita3/'>Apa itu Ethereum?</a>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <img src="/static/images/berita4.png" alt="section4" class="img-fluid">
         <a href='/blog/berita4/'>Apa yang Bisa Dilakukan Setelah Beli Crypto?</a>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <img src="/static/images/berita5.jpg" alt="section4" class="img-fluid">
         <a href='/blog/berita5/'>Alasan Elon Musk Mendukung Miliki Dogecoin</a>
       </div>
@@ -99,7 +106,7 @@
    <!--Footer-->
    <footer style="margin-top: 2rem">
     <div class="container">
-      <div class="row row-cols-auto">
+      <div class="row row-cols-auto justify-content-start">
         <div class="col">
           <img src="/static/images/Logo Slogan.png" alt="Logo Elevate" id="logo-bawah" />
         </div>

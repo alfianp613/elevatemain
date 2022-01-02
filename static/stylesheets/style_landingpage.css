@@ -86,11 +86,12 @@ h1 {
 }
 .section1 h3 {
   /* Mari Mulai Kembangkan Portfolio Cryptocurrency Anda Bersama Kami */
-  margin-top: 180px;
-  margin-left: 50px;
+  grid-area: section1;
+  margin-top: 200px;
+  margin-left: 30px;
   font-family: 'inter-Bold';
-  font-size: 74px;
-  line-height: 77px;
+  font-size: 40px;
+  line-height: 52px;
   display: flex;
   align-items: center;
   text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
@@ -99,35 +100,26 @@ h1 {
 
 .center h3 {
   font-family: 'inter-extrabold';
-  font-size: 48px;
+  font-size: 43px;
   text-align: center;
   margin-top: 30px;
 }
 
 .section2 img {
   margin-top: 50px;
-  margin-left: 280px;
-  margin-right: 180px;
   width: 192px;
 }
 
 .section2 p {
-  margin-top: 20px;
-  margin-bottom: 30px;
   text-align: center;
-  margin-left: 180px;
-  margin-right: 180px;
   font-size: 22px;
   font-family: 'inter-regular';
 }
 
 .section2 h3 {
-  margin-top: 20px;
   text-align: center;
   font-family: 'inter-Bold';
   font-size: 40px;
-  margin-left: 180px;
-  margin-right: 180px;
 }
 
 .section3 {
@@ -141,24 +133,27 @@ h1 {
   margin-left: 50px;
   margin-right: 150px;
   font-family: 'inter-extrabold';
-  font-size: 43px;
-  line-height: 77px;
+  font-size: 35px;
+  line-height: 35px;
   display: flex;
   align-items: center;
 
   color: #ffffff;
   text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
-
+.section3 .display-3 {
+  margin-top: -1000;
+}
 .section3 a {
   font-family: 'inter-Bold';
-  font-size: 28px;
+  font-size: 18px;
   text-align: center;
 }
 
-.rekomendasi {
+.rekomendasi h1 {
   margin-top: 50px;
   margin-left: 50px;
+  font-size: 40px;
 }
 
 .section4 {
@@ -225,4 +220,69 @@ footer {
 }
 .attrib a:hover {
   color: #444444;
+}
+
+@media (min-width: 992px) {
+  .section1 {
+    background-image: url('/static/images/Section1.png');
+    background-size: cover;
+    height: 695px;
+  }
+  .section1 h3 {
+    /* Mari Mulai Kembangkan Portfolio Cryptocurrency Anda Bersama Kami */
+    grid-area: section1;
+    margin-top: 180px;
+    margin-left: 50px;
+    font-family: 'inter-Bold';
+    font-size: 74px;
+    line-height: 77px;
+    display: flex;
+    align-items: center;
+    text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+  }
+
+  .center h3 {
+    font-family: 'inter-extrabold';
+    font-size: 48px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .section3 {
+    background-image: url('/static/images/Section3.png');
+    background-size: cover;
+    height: 414px;
+  }
+
+  .section3 h3 {
+    /* Mari Mulai Kembangkan Portfolio Cryptocurrency Anda Bersama Kami */
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 150px;
+    font-family: 'inter-extrabold';
+    font-size: 43px;
+    line-height: 77px;
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .section3 a {
+    font-family: 'inter-Bold';
+    font-size: 28px;
+    text-align: center;
+  }
+  .rekomendasi h1 {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .garis {
+    display: none;
+  }
 }
