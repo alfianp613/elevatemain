@@ -124,6 +124,20 @@ footer {
   color: #444444;
 }
 
+.btn-github {
+  background: black;
+  color: #ffffff;
+}
+.btn-github:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.btn-basic {
+  background-color: blue;
+  color: white;
+}
+.btn-basic:hover {
+  opacity: 0.7;
+}
 @media only screen and (max-width: 990px) {
   .garis {
     display: none;
