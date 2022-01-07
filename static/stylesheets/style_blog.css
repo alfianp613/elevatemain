@@ -114,6 +114,9 @@ h1 {
   text-align: justify;
 }
 
+.card {
+  border: none;
+}
 footer {
   background-color: #a1f480;
 }
