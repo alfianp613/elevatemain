@@ -144,6 +144,7 @@ footer {
 .garis {
   height: 155px;
   border: 2.5px solid #ffffff;
+  border-radius: 25px;
 }
 
 .attrib p {
@@ -156,6 +157,7 @@ footer {
 .attrib li {
   margin-top: 15px;
 }
+
 .attrib a {
   font-family: 'inter-bold';
   color: white;
@@ -165,7 +167,9 @@ footer {
 .attrib a:hover {
   color: #444444;
 }
-
+img {
+  border-radius: 10px;
+}
 @media (min-width: 992px) {
   .section1 {
     background-color: #591fce;

@@ -102,6 +102,7 @@ footer {
 .garis {
   height: 155px;
   border: 2.5px solid #ffffff;
+  border-radius: 25px;
 }
 
 .attrib p {

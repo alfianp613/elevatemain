@@ -138,6 +138,7 @@ button a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
+  border-radius: 10px;
 }
 
 .card-title {
@@ -226,6 +227,7 @@ footer {
 .garis {
   height: 155px;
   border: 2.5px solid #ffffff;
+  border-radius: 25px;
 }
 
 .attrib p {

@@ -124,6 +124,7 @@ footer {
 .garis {
   height: 155px;
   border: 2.5px solid #ffffff;
+  border-radius: 25px;
 }
 
 .attrib p {
@@ -144,6 +145,10 @@ footer {
 }
 .attrib a:hover {
   color: #444444;
+}
+
+img {
+  border-radius: 10px;
 }
 
 @media (min-width: 992px) {
