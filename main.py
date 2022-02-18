@@ -88,7 +88,7 @@ def dashboard():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day + timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -151,7 +151,7 @@ def dashboard_eth():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -214,7 +214,7 @@ def dashboard_bnb():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -277,7 +277,7 @@ def dashboard_usdt():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -340,7 +340,7 @@ def dashboard_sol():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -403,7 +403,7 @@ def dashboard_usdc():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -466,7 +466,7 @@ def dashboard_ada():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -529,7 +529,7 @@ def dashboard_xrp():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -592,7 +592,7 @@ def dashboard_dot():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
@@ -655,7 +655,7 @@ def dashboard_doge():
     )
     table2s, table2d = tablecoming(
         f"{hari1.day}/{hari1.month}/{hari1.year}",
-        f"{minggu.day+ timedelta(days=7)}/{minggu.month}/{minggu.year}",
+        f"{minggu.day}/{minggu.month}/{minggu.year}",
     )
     pie = piechart(data)
     rek = rekomendasi(data, dataf)
